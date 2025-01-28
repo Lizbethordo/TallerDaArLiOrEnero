@@ -2,9 +2,12 @@ package dev.liz.tallerdaarliorenero.Components
 
 import android.view.Menu
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ButtonDefaults
@@ -26,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
@@ -53,13 +57,12 @@ fun MenuScreen(navController: NavController) {
             var checkedValue by remember {
                 mutableStateOf(false)
             }
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(16.dp).clickable {
                     checkedValue = !checkedValue
                 }
             ) {
-
                 Checkbox(
                     checked = checkedValue,
                     onCheckedChange = {
@@ -72,13 +75,12 @@ fun MenuScreen(navController: NavController) {
             var checkedValue2 by remember {
                 mutableStateOf(false)
             }
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(16.dp).clickable {
                     checkedValue = !checkedValue
                 }
             ) {
-
                 Checkbox(
                     checked = checkedValue2,
                     onCheckedChange = {
@@ -91,13 +93,12 @@ fun MenuScreen(navController: NavController) {
             var checkedValue3 by remember {
                 mutableStateOf(false)
             }
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(16.dp).clickable {
                     checkedValue = !checkedValue
                 }
             ) {
-
                 Checkbox(
                     checked = checkedValue3,
                     onCheckedChange = {
@@ -110,13 +111,12 @@ fun MenuScreen(navController: NavController) {
             var checkedValue4 by remember {
                 mutableStateOf(false)
             }
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(16.dp).clickable {
                     checkedValue = !checkedValue
                 }
             ) {
-
                 Checkbox(
                     checked = checkedValue4,
                     onCheckedChange = {
@@ -129,13 +129,12 @@ fun MenuScreen(navController: NavController) {
             var checkedValue5 by remember {
                 mutableStateOf(false)
             }
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(16.dp).clickable {
                     checkedValue = !checkedValue
                 }
             ) {
-
                 Checkbox(
                     checked = checkedValue5,
                     onCheckedChange = {
@@ -144,18 +143,25 @@ fun MenuScreen(navController: NavController) {
                 )
                 Text(text = "Guanta al Horno")
             }
-            ElevatedButton(
-                onClick = { navController.navigate("home") },
-                modifier = Modifier.padding(16.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.LightGray
-                ),
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(),
+                contentAlignment = Alignment.BottomCenter
             ) {
-                Text("Regresar")
+                ElevatedButton(
+                    onClick = { navController.navigate("home") },
+                    modifier = Modifier.padding(16.dp).width(300.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Transparent,
+                    ),
+                ) {
+                    Text(
+                        "Regresar",
+                        fontSize = 24.sp,
+                        color = Color.Black
+                    )
+                }
             }
-
-
         }
-
     }
 }

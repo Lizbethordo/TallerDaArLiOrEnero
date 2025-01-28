@@ -1,6 +1,5 @@
 package dev.liz.tallerdaarliorenero.Components
 
-
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bathtub
@@ -25,7 +24,6 @@ fun ParamScreen2(navController: NavHostController, name: String?) {
     Scaffold(
         topBar = {
             TopAppBar(
-
                 title = { Text("PARAMETROS",
                     color = Color.Black,
                     fontSize = 30.sp,
@@ -61,11 +59,9 @@ fun ParamScreen2(navController: NavHostController, name: String?) {
                         imageVector = Icons.Default.Face,
                         contentDescription = "Go to back",
                         modifier = Modifier.size(64.dp),
-                        // Ajusta el tamaño si es necesario
                     )
                 }
             }
-            // Iconos asociados
             Row(
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 verticalAlignment = Alignment.CenterVertically
@@ -88,8 +84,6 @@ fun ParamScreen2(navController: NavHostController, name: String?) {
                     modifier = Modifier.size(48.dp)
                 )
             }
-
-
             Box(
                 modifier = Modifier
                     .fillMaxSize(),
@@ -97,14 +91,13 @@ fun ParamScreen2(navController: NavHostController, name: String?) {
             ) {
                 FloatingActionButton(
                     onClick = { navController.navigate("home") },
-                    containerColor = Color.White, // Fondo blanco del botón
-                    modifier = Modifier.padding(16.dp).width(200.dp)// Espaciado desde el borde inferior
+                    containerColor = Color.White,
+                    modifier = Modifier.padding(16.dp).width(200.dp)
                 ) {
                     Text(
                         text = "Regresar",
-                        color = Color.Magenta, // Texto en color magenta
+                        color = Color.Magenta,
                         fontSize = 18.sp,
-
                         textAlign = TextAlign.Center
                     )
                 }

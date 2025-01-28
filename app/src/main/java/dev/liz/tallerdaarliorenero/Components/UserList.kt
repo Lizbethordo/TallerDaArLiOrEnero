@@ -1,7 +1,10 @@
 package dev.liz.tallerdaarliorenero.Components
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
@@ -21,14 +24,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.Navigation
 import dev.liz.tallerdaarliorenero.Reusable.ItemContact
 import dev.liz.tallerdaarliorenero.Reusable.ItemContact2
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserList(navController: NavHostController) {
@@ -47,7 +51,6 @@ fun UserList(navController: NavHostController) {
                 title = { Text("Lista de Usuarios", color = Color.Black)}
             )
         }
-
     ) { paddingValues ->
 
         Column(
@@ -65,17 +68,25 @@ fun UserList(navController: NavHostController) {
             HorizontalDivider()
             ItemContact2( "Domenica Torres", Icons.Default.Bathtub,Icons.Default.Call,navController)
 
-            ElevatedButton (
-                onClick = { navController.navigate("home") },
-                modifier = Modifier.padding(16.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Green,),
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(),
+                contentAlignment = Alignment.BottomCenter
             ) {
-                Text("Regresar")
+                ElevatedButton(
+                    onClick = { navController.navigate("home") },
+                    modifier = Modifier.padding(16.dp).width(300.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Transparent,
+                    ),
+                ) {
+                    Text(
+                        "Regresar",
+                        fontSize = 24.sp,
+                        color = Color.Black
+                    )
+                }
             }
-
         }
-
-
     }
 }

@@ -54,14 +54,12 @@ fun HomePlace(navController: NavController) {
                     textAlign = TextAlign.Center) },
 
 
-
                 )
         }
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)
             .verticalScroll(rememberScrollState())
         ) {
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -71,13 +69,13 @@ fun HomePlace(navController: NavController) {
                 IconButton(onClick = { navController.popBackStack() }) {
                     Icon(
                         imageVector = Icons.Default.Face,
+                        tint = Color.Black,
                         contentDescription = "Go to back",
                         modifier = Modifier.size(100.dp),
-                        // Ajusta el tamaño si es necesario
+
                     )
                 }
             }
-
             Row (
                 modifier = Modifier
                     .fillMaxWidth()
@@ -97,7 +95,6 @@ fun HomePlace(navController: NavController) {
                     modifier = Modifier.padding(16.dp)
                 )
             }
-
             Row (
                 modifier = Modifier
                     .fillMaxWidth()
@@ -141,13 +138,11 @@ fun HomePlace(navController: NavController) {
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Red
                     ),
-
-
                     ) {
                     Text("Lista usuarios",
-                        fontSize = 24.sp)
+                        fontSize = 24.sp,
+                        color = Color.Black)
                 }
-
                 ElevatedButton(
                     onClick = { navController.navigate("menu") },
                     modifier = Modifier.padding(16.dp).width(300.dp),
@@ -156,9 +151,9 @@ fun HomePlace(navController: NavController) {
                     ),
                 ) {
                     Text("Lista de platos",
-                        fontSize = 24.sp)
+                        fontSize = 24.sp,
+                        color = Color.Black)
                 }
-
                 ElevatedButton(
                     onClick = { navController.navigate("param") },
                     modifier = Modifier.padding(16.dp).width(300.dp),
@@ -167,13 +162,10 @@ fun HomePlace(navController: NavController) {
                     ),
                 ) {
                     Text("Envio Parametros",
-                        fontSize = 24.sp)
+                        fontSize = 24.sp,
+                        color = Color.Black)
                 }
-
             }
-            // Botón para ir a la pantalla de CheckBox
-
         }
-
-
-    }}
+    }
+}

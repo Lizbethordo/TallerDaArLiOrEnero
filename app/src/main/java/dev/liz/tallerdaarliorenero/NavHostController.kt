@@ -11,14 +11,13 @@ import dev.liz.tallerdaarliorenero.Components.MenuScreen
 import dev.liz.tallerdaarliorenero.Components.ParamScreen
 import dev.liz.tallerdaarliorenero.Components.ParamScreen2
 import dev.liz.tallerdaarliorenero.Components.UserList
-
-
 @Composable
 fun NavHostController() {
     val navController= rememberNavController()
     NavHost(navController= navController, startDestination= "home"){
         composable(route="home"){ HomePlace(navController) }
         composable(route="user"){ UserList(navController) }
+        composable(route="menu"){ MenuScreen(navController) }
         composable(
             route = "param/{userName}",
             arguments = listOf(
@@ -42,7 +41,5 @@ fun NavHostController() {
             ParamScreen2(navController, userName)
         }
 
-
-       composable(route="menu"){ MenuScreen(navController) }
     }
 }
